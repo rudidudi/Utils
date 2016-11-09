@@ -28,7 +28,7 @@ public class JavaToJson
       arL.add(m2);
       
       
-    javaToJson(args);
+    javaToJson(arL);
   }
 
         private static void javaToJson(Object obj)
