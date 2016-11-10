@@ -8,15 +8,16 @@ public class ExpSettings
 {
     private static final int LEVEL_MIN = 1;
     private static final int LEVEL_MAX = 100;
-    static final int XP_FACTOR = 50;
     private static final double BASE_EXPONENT = 1.8D;
     private static final double LVL_BASE = 2.5D;
     private static final double DEC_BASE = 0.01D;
     
+    protected static final int XP_FACTOR = 50;
+    
     private static int level = ExpSettings.LEVEL_MIN;
     private static double exponent = ExpSettings.BASE_EXPONENT;
     
-    static final Map<Integer, Double> factorMap;
+    private static final Map<Integer, Double> factorMap;
     static {
         Map<Integer, Double> aMap = new LinkedHashMap<Integer,Double>();
         aMap.put(20, 0.01D);//From level 1 to 20
@@ -25,7 +26,7 @@ public class ExpSettings
         factorMap = Collections.unmodifiableMap(aMap);
     }
     
-    static  Map<Integer, Double> factorMapLvlMap;
+    protected static  Map<Integer, Double> factorMapLvlMap;
     static {
         Map<Integer, Double> aMap = new LinkedHashMap<Integer,Double>();
         double factor = LVL_BASE;
@@ -36,7 +37,7 @@ public class ExpSettings
         factorMapLvlMap = Collections.unmodifiableMap(aMap);
     }
     
-    static Map<Integer, Double> exponentMap;
+    protected static Map<Integer, Double> exponentMap;
     static{
         Map<Integer, Double> aMap = new LinkedHashMap<Integer,Double>();
         ExpSettings.factorMap.forEach((k,v)-> {

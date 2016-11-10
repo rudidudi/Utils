@@ -5,13 +5,13 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class ExpConfig {
+public class ExpConfig extends ExpSettings {
 
     //Method that defines
     public static Map<Integer, Integer> xpMap;
     static{
         Map<Integer, Integer> aMap = new LinkedHashMap<Integer,Integer>();
-        ExpSettings.exponentMap.forEach((k,v)->{
+        exponentMap.forEach((k,v)->{
             Integer exp = (int) ExpUtils.round((ExpSettings.XP_FACTOR*(Math.pow(k,v))),0);
             aMap.put(k, exp);
         });     
